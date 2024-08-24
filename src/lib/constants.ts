@@ -1,0 +1,1 @@
+export const CELLPHONE_REGEX = /^\d{10}$/
