@@ -1,10 +1,14 @@
+-- CreateEnum
+CREATE TYPE "Role" AS ENUM ('SUPER_USER', 'ADMIN', 'CLIENT');
+
 -- CreateTable
 CREATE TABLE "User" (
-    "id" BIGSERIAL NOT NULL,
+    "id" SERIAL NOT NULL,
     "username" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "cellphone" TEXT NOT NULL,
+    "role" "Role" NOT NULL DEFAULT 'CLIENT',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
