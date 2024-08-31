@@ -6,11 +6,27 @@ export async function POST(request: NextRequest) {
   try {
     const data = await request.json()
 
-    const emailFound = await prisma.user.findUnique({
-      where: {
-        email: data.email
-      }
-    })
+    const [
+      emailFound, 
+      usernameFound, 
+      cellphoneFound
+    ] = await Promise.all([
+      prisma.user.findUnique({
+        where: {
+          email: data.email,
+        }
+      }),
+      prisma.user.findUnique({
+        where: {
+          username: data.username
+        }
+      }),
+      prisma.user.findUnique({
+        where: {
+          cellphone: data.cellphone
+        }
+      })
+    ])
 
     if(emailFound) return NextResponse.json(
       { 
@@ -20,12 +36,6 @@ export async function POST(request: NextRequest) {
       { status: 409 }
     )
 
-    const usernameFound = await prisma.user.findUnique({
-      where: {
-        username: data.username
-      }
-    })
-
     if(usernameFound) return NextResponse.json(
       { 
         title: "Nombre de usuario",
@@ -33,12 +43,6 @@ export async function POST(request: NextRequest) {
       },
       { status: 409 }
     )
-
-    const cellphoneFound = await prisma.user.findUnique({
-      where: {
-        cellphone: data.cellphone
-      }
-    })
 
     if(cellphoneFound) return NextResponse.json(
       { 
