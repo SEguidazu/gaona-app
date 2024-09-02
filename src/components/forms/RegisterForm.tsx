@@ -40,8 +40,7 @@ const formSchema = z.object({
   (data) => data.password === data.confirmPassword, {
   message: "Las contraseñas no coinciden.",
   path: ["confirmPassword"]
-}
-)
+})
 
 function RegisterForm() {
   const [errorAlert, setErrorAlert] = useState<{
