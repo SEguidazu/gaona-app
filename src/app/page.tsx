@@ -1,7 +1,12 @@
+import PublicHeader from "@/components/headers/PublicHeader";
+
 export default function Home() {
   return (
-    <main className="p-4">
-      <h1>Gaona app</h1>
-    </main>
+    <>
+      <PublicHeader />
+      <main className="p-4">
+        <h2>Home page</h2>
+      </main>
+    </>
   );
 }

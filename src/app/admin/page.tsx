@@ -1,7 +1,7 @@
 export default function Admin() {
   return (
-    <div>
-      <h1>Admin panel</h1>
-    </div>
+    <>
+      <h2>Gaona app - Admin panel</h2>
+    </>
   );
 }

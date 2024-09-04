@@ -1,13 +1,13 @@
-import AdminHeader from "@/components/headers/AdminHeader";
+import PublicHeader from "@/components/headers/PublicHeader";
 
-export default function AdminLayout({
+export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <>
-      <AdminHeader />
+      <PublicHeader />
       <main className="p-4">{children}</main>
     </>
   );

@@ -1,13 +1,12 @@
-
-import RegisterForm from "@/components/forms/RegisterForm"
+import RegisterForm from "@/components/forms/RegisterForm";
 
 function RegisterPage() {
   return (
-    <main className="p-4">
-      <h1>Register Page</h1>
+    <>
+      <h2>Register Page</h2>
       <RegisterForm />
-    </main>
-  )
+    </>
+  );
 }
 
-export default RegisterPage
+export default RegisterPage;
