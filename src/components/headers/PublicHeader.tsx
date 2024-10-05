@@ -1,5 +1,5 @@
 import { auth } from "@/lib/auth";
-import NavigationMenu from "./NavigationMenu";
+import NavigationMenu from "@/components/menu/NavigationMenu";
 
 async function PublicHeader() {
   const session = await auth();

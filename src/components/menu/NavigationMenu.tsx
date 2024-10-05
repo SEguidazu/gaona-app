@@ -34,24 +34,26 @@ function NavigationMenu({ isSession = false }: NavigationMenuProps) {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/auth/register" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Página de registro
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          {isSession ? (
-            <Button onClick={() => signOut()}>Cerrar sesión</Button>
-          ) : (
-            <Link href="/auth/login" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Iniciar sesión
-              </NavigationMenuLink>
-            </Link>
-          )}
-        </NavigationMenuItem>
+        {isSession ? (
+          <Button onClick={() => signOut()}>Cerrar sesión</Button>
+        ) : (
+          <>
+            <NavigationMenuItem>
+              <Link href="/auth/register" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Página de registro
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/auth/login" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Iniciar sesión
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          </>
+        )}
       </NavigationMenuList>
     </NavigationMenuUi>
   );
